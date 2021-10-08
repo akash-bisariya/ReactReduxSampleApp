@@ -1,8 +1,8 @@
 import './App.css';
-// import RegisterFormFn from './components/RegisterFormFn';
 import Navbar from './components/NavBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import RegisterFormFN from './components/RegisterFormFn';
+import TransactionFn from './components/Transaction/TransactionFn';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Navbar/>
       <Switch>
         <Route path='/signup' component={RegisterFormFN}/>
+        <Route path='/transaction' component={TransactionFn}/>
       </Switch>
       </Router>
   );

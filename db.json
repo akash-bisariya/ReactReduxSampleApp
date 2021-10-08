@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "json-server",
+      "dob": "typicode",
+      "accountNumber": "1234",
+      "accountType": "Saving Account",
+      "state": "Haryana",
+      "district": "Amritsar",
+      "password": "1234",
+      "balance": 0
+    },
+    {
+      "username": "Akash",
+      "dob": "2021-09-29",
+      "accountNumber": "1234",
+      "accountType": "Current Account",
+      "state": "Haryana",
+      "district": "Amritsar",
+      "password": "1111",
+      "confirmPassword": "1111",
+      "balance": "5000",
+      "id": 2
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "transactionType": "Withdrawal",
+      "amount": 100,
+      "description": "test",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "transactionType": "Deposit",
+      "amount": 200,
+      "description": "test",
+      "userId": 2
+    }
+  ]
+}

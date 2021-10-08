@@ -1,0 +1,18 @@
+.form-input {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.form-label{
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+  height: 40px;
+}
+
+.form-error {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: rgba(211, 17, 17, 0.89);
+  height: 40px;
+}

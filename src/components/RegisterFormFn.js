@@ -1,15 +1,20 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import './Form.css'
+import axios from 'axios'
 
 
 export default function RegisterFormFN() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+
+    const onSubmit = data => axios.post("http://localhost:3000/users",data);
+
+    // console.log(data.dob);
 
     console.log(watch("example"));
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='form-input'>
+            <h1 style={{color:'#15cdfc', textShadow:'2px 2px'}}>Bank Account Register</h1>
             <div className='form-label'>
                 <input placeholder="Username" {...register("username", {
                     required: true, minLength: {
@@ -97,6 +102,19 @@ export default function RegisterFormFN() {
                     }
                 })} />
                 {errors.confirmPassword && <div className='form-error'>Minimum 4 & Max 10 length allowed.</div>}
+            </div>
+            <div className='form-label'>
+                <input placeholder="Opening Balance" {...register("balance", {
+                    required: true, min: {
+                        value: 100,
+                        message: 'min required'
+                    }, max: {
+                        value: 10000,
+                        message: 'max required'
+                    }
+                }
+                )} />
+                {errors.balance && <div className='form-error'>Minimum 100 & Maximum 10000 amount can be added.</div>}
             </div>
 
             <div className='form-label'>
