@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "username": "json-server",
+      "username": "json",
       "dob": "typicode",
       "accountNumber": "1234",
       "accountType": "Saving Account",
@@ -26,17 +26,19 @@
   ],
   "transactions": [
     {
-      "id": 1,
+      "transactionId": 1,
       "transactionType": "Withdrawal",
-      "amount": 100,
-      "description": "test",
+      "transactionAmount": 100,
+      "transactionDescription": "test",
+      "transactionDate": "12/02",
       "userId": 1
     },
     {
-      "id": 2,
+      "transactionId": 2,
       "transactionType": "Deposit",
-      "amount": 200,
-      "description": "test",
+      "transactionAmount": 200,
+      "transactionDescription": "test",
+      "transactionDate": "12/02",
       "userId": 2
     }
   ]

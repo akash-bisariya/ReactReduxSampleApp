@@ -8,21 +8,20 @@ const Navbar = () => {
                <NavLink to ="/">
                    <h1>NAGP-BANK</h1>
                </NavLink>
-               {/* <Bars/> */}
                <NavMenu>
                    <NavLink to="./signup" activeStyle>
                         SignUp
                    </NavLink>
-                   <NavLink to="/login" activeStyle>
+                   {/* <NavLink to="/login" activeStyle>
                         Login
-                   </NavLink>
-                   <NavLink to="/myaccount" activeStyle>
-                        MyAccount
+                   </NavLink> */}
+                   <NavLink to="/myprofile" activeStyle>
+                        MyProfile
                    </NavLink>
                </NavMenu>
                <NavBtn>
-                   <NavBtnLink to="/signIn" style={{marginLeft:'20px'}}>
-                        SignIn
+                   <NavBtnLink to="/login" style={{marginLeft:'20px'}}>
+                        Login
                    </NavBtnLink>
                </NavBtn>
            </Nav>

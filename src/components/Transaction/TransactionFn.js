@@ -1,18 +1,21 @@
-import './Form.css'
 import React from "react";
 import { useForm } from "react-hook-form";
+import './transaction.css'
+import { useState } from "react";
 
 export default function TransactionFn() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 
+    const [count, setCount] = useState(0);
+
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='form-input'>
             <h1 style={{color:'#15cdfc', textShadow:'2px 2px'}}>Withdraw/Deposit</h1>
             <div className='form-label'>
-                <label>Select Transaction Type - </label>
+                <label>Select Transaction Type </label>
 
                 <input style={{ marginLeft:'100px'}} type="radio" id="withdraw" name="transaction_type" value="Withdraw" {...register("transaction_type", { required: true })} />
                 <label for="withdraw">Withdraw</label><br></br>
@@ -20,9 +23,9 @@ export default function TransactionFn() {
                 <label for="deposit">Deposit</label><br></br>
                 {errors.transaction_type && <div className='form-error'>Please select transaction type</div>}
 
-                <div className='form-label' style={{marginTop:'20px'}}>
+                <div className='form-label' style={{marginTop:'10px'}}>
                     <label style={{ margin:'15px' }}>Account Balance  </label>
-                    <label style={{ marginLeft:'100px' }} id="balance">0</label>
+                    <label style={{ marginLeft:'100px' }} id="balance">{count}</label>
                 </div>
 
                 <div className='form-label'>
@@ -40,7 +43,7 @@ export default function TransactionFn() {
                 </div>
 
                 <div className='form-label'>
-                    <input type="submit" />
+                    <input type="submit" onClick={()=>setCount(count+1)} />
                 </div>
 
             </div>

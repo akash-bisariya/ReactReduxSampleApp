@@ -1,7 +1,9 @@
 .form-input {
   text-align: center;
   margin: 50px auto;
-}
+  border: dotted #F55A00 .5vw;
+  
+} 
 
 .form-label {
   font-size: 1rem;

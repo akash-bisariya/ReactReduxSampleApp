@@ -1,0 +1,23 @@
+.form-input {
+  text-align: center;
+  margin: 50px auto;
+} 
+
+.form-label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #000;
+  height: 40px;
+}
+
+.myprofile-label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form-error {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: rgba(211, 17, 17, 0.89);
+  height: 40px;
+}
