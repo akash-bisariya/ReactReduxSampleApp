@@ -25,16 +25,20 @@ export default function DashboardFn() {
         <div>
             <h1 style={{ color: '#15cdfc', transactionAmount: '2px 2px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Dashboard</h1>
             <table>
-                <tr>
-                    <th><input type='submit' value='MyProfile' style={{ display: 'flex', marginLeft: '20px', alignItems: 'end', background: 'lightblue' }}></input></th>
-                    <th><input type='submit' value='Withdraw/Deposit' style={{ display: 'flex', alignItems: 'end', marginLeft: '20px', background: 'lightblue' }}></input></th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th><input type='submit' value='MyProfile' style={{ display: 'flex', marginLeft: '20px', alignItems: 'end', background: 'lightblue' }}></input></th>
+                        <th><input type='submit' value='Withdraw/Deposit' style={{ display: 'flex', alignItems: 'end', marginLeft: '20px', background: 'lightblue' }}></input></th>
+                    </tr>
+                </thead>
             </table>
             <table style={{ margin: '20px' }}>
-                <tr>
-                    <th>Current Balance: </th>
-                    <th>1000</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Current Balance: </th>
+                        <th>1000</th>
+                    </tr>
+                </thead>
             </table>
             <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="p-3 text-center">My Transactions</h3>
             <div className="container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

@@ -5,7 +5,22 @@ import { useHistory } from "react-router-dom";
 export default function LoginFn() {
     let history = useHistory();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data =>  axios.get("http://localhost:3000/users",{
+        params:{
+            username:data.username,
+            password:data.password
+        }
+    })
+    .then(function(response){
+        // console.log(JSON.parse(response))
+        // console.log(Array(response.data).get(0).length)
+        if(response.data[0])
+        history.push("/dashboard");
+        else
+        alert("Invalid User");
+        // if(Array(response.data).length>0)
+        // history.push("/dashboard");
+    });
 
     //http://localhost:3000/users?username=json&password=1234
 
