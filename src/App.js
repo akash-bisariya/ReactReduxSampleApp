@@ -17,6 +17,7 @@ function App() {
         <Route path='/myprofile' component={MyProfileFn}/>
         <Route path='/dashboard' component={DashboardFn}/>
         <Route path='/login' component={LoginFn}/>
+        <Route path='/' component={LoginFn}/>
       </Switch>
       </Router>
   );

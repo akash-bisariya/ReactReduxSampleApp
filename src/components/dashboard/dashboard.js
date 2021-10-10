@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function DashboardFn() {
+    const currentUser = useSelector(state => state.currentUser)
+    
+    const onSubmit = data => console.log(currentUser.user)
+
     const [users, setUsers] = useState([
         {
             "transactionId": 1,
@@ -23,12 +28,12 @@ export default function DashboardFn() {
 
     return (
         <div>
-            <h1 style={{ color: '#15cdfc', transactionAmount: '2px 2px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Dashboard</h1>
+            <h1 style={{ color: '#15cdfc', transactionAmount: '2px 2px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Dashboard{currentUser.user.username}</h1>
             <table>
                 <thead>
                     <tr>
                         <th><input type='submit' value='MyProfile' style={{ display: 'flex', marginLeft: '20px', alignItems: 'end', background: 'lightblue' }}></input></th>
-                        <th><input type='submit' value='Withdraw/Deposit' style={{ display: 'flex', alignItems: 'end', marginLeft: '20px', background: 'lightblue' }}></input></th>
+                        <th><input type='submit' onClick={onSubmit} value='Withdraw/Deposit' style={{ display: 'flex', alignItems: 'end', marginLeft: '20px', background: 'lightblue' }}></input></th>
                     </tr>
                 </thead>
             </table>
