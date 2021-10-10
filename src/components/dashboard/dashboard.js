@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 export default function DashboardFn() {
     const currentUser = useSelector(state => state.currentUser)
-    
-    const onSubmit = data => console.log(currentUser.user)
+    let history = useHistory();
+    const onSubmit = data => history.push("/myprofile");
+
+    const handleWithdraw = data => history.push("/transaction");
 
     const [users, setUsers] = useState([
         {
@@ -28,12 +31,13 @@ export default function DashboardFn() {
 
     return (
         <div>
-            <h1 style={{ color: '#15cdfc', transactionAmount: '2px 2px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Dashboard{currentUser.user.username}</h1>
+            <h1 style={{ color: '#15cdfc', transactionAmount: '2px 2px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                {currentUser.user.username ? currentUser.user.username : "Login"}'s Dashboard</h1>
             <table>
                 <thead>
                     <tr>
-                        <th><input type='submit' value='MyProfile' style={{ display: 'flex', marginLeft: '20px', alignItems: 'end', background: 'lightblue' }}></input></th>
-                        <th><input type='submit' onClick={onSubmit} value='Withdraw/Deposit' style={{ display: 'flex', alignItems: 'end', marginLeft: '20px', background: 'lightblue' }}></input></th>
+                        <th><input type='submit' onClick={onSubmit} value='MyProfile' style={{ display: 'flex', marginLeft: '20px', alignItems: 'end', background: 'lightblue' }}></input></th>
+                        <th><input type='submit' onClick={handleWithdraw} value='Withdraw/Deposit' style={{ display: 'flex', alignItems: 'end', marginLeft: '20px', background: 'lightblue' }}></input></th>
                     </tr>
                 </thead>
             </table>
@@ -41,7 +45,11 @@ export default function DashboardFn() {
                 <thead>
                     <tr>
                         <th>Current Balance: </th>
-                        <th>1000</th>
+                        <th>{currentUser.user.balance}</th>
+                    </tr>
+                    <tr>
+                        <th>Account Number: </th>
+                        <th>{currentUser.user.accountNumber}</th>
                     </tr>
                 </thead>
             </table>

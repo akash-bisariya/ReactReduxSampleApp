@@ -22,11 +22,23 @@
       "confirmPassword": "1111",
       "balance": "5000",
       "id": 2
+    },
+    {
+      "username": "bigakash",
+      "dob": "1993-02-15",
+      "accountNumber": "15021993",
+      "accountType": "Saving Account",
+      "state": "Uttar Pradesh",
+      "district": "Meerut",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "balance": "100",
+      "id": 3
     }
   ],
   "transactions": [
     {
-      "transactionId": 1,
+      "id": 1,
       "transactionType": "Withdrawal",
       "transactionAmount": 100,
       "transactionDescription": "test",
@@ -34,12 +46,59 @@
       "userId": 1
     },
     {
-      "transactionId": 2,
+      "id": 2,
       "transactionType": "Deposit",
       "transactionAmount": 200,
       "transactionDescription": "test",
       "transactionDate": "12/02",
       "userId": 2
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 200,
+      "transactionDescription": "test",
+      "transactionDate": "12/02",
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 200,
+      "transactionDescription": "akash",
+      "transactionDate": "11/10/2021",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": -200,
+      "transactionDescription": "akash",
+      "transactionDate": "11/10/2021",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "params": {
+        "transactionType": "Withdraw",
+        "transactionAmount": "100",
+        "transactionDate": "",
+        "userId": 3
+      },
+      "id": 6
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": "100",
+      "transactionDate": "",
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": "100",
+      "transactionDate": "",
+      "userId": 3,
+      "id": 8
     }
   ]
 }

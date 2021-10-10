@@ -4,14 +4,17 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import allActions from '../actions/allActions';
+import { useEffect } from 'react';
 
 export default function LoginFn() {
 
-    // const counter = useSelector(state => state.counter)
     const currentUser = useSelector(state => state.currentUser)
 
     const dispatch = useDispatch()
 
+    useEffect(() => {
+        dispatch(allActions.userActions.logOut())
+      }, [])
 
     let history = useHistory();
 
@@ -26,12 +29,17 @@ export default function LoginFn() {
             if (response.data[0]) {
                 console.log(response.data[0])
                 dispatch(allActions.userActions.setUser(response.data[0]))
+                localStorage.setItem("userId", response.data[0].id)
                 history.push("/dashboard");
             }
             else
                 alert("Invalid User");
             // if(Array(response.data).length>0)
             // history.push("/dashboard");
+        })
+        .catch(function (error) {
+            // handle error
+            alert("Server Issue - "+error);
         });
 
     //http://localhost:3000/users?username=json&password=1234

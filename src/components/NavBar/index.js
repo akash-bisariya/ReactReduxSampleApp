@@ -1,7 +1,9 @@
 import React from 'react'
 import { Nav, NavBtn, NavBtnLink, NavLink, NavMenu} from './NavbarElements'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+    const currentUser = useSelector(state => state.currentUser.user)
     return (
         <div>
            <Nav>
@@ -21,7 +23,7 @@ const Navbar = () => {
                </NavMenu>
                <NavBtn>
                    <NavBtnLink to="/login" style={{marginLeft:'20px'}}>
-                        Login
+                   {currentUser.username? "Logout" : "Login"}
                    </NavBtnLink>
                </NavBtn>
            </Nav>
