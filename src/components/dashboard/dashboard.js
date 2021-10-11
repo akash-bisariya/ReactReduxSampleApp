@@ -1,33 +1,56 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 export default function DashboardFn() {
     const currentUser = useSelector(state => state.currentUser)
+
+    const [transactions, setTransaction] = useState([
+        {
+            "transactionId": 0,
+            "transactionType": "Empty",
+            "transactionAmount": 0,
+            "transactionDescription": "Empty",
+            "transactionDate": "Empty",
+            "userId": 0
+        }
+    ]);
+
+
+    const [initialBalance, setUpdatedBalance] = useState(0);
+    
+
+
+    useEffect(() => {
+        axios.get("http://localhost:3000/transactions?userId=" + currentUser.user.id)
+            .then(function (response) {
+                if (response.data[0]) {
+                    console.log(response.data)
+                    setTransaction(response.data)
+                    var bal=0
+                    response.data.map(trn=>bal=bal+(trn.transactionType==="Withdraw"?-trn.transactionAmount:trn.transactionAmount))
+                    setUpdatedBalance(currentUser.user.balance+bal)
+                    console.log(currentUser.user.balance+"balnce --- "+bal)
+                }
+                else
+                    alert("Invalid User");
+            })
+            .catch(function (error) {
+                // handle error
+                alert("Server Issue - " + error);
+            });
+    }, [])
+
     let history = useHistory();
+
     const onSubmit = data => history.push("/myprofile");
 
     const handleWithdraw = data => history.push("/transaction");
 
-    const [users, setUsers] = useState([
-        {
-            "transactionId": 1,
-            "transactionType": "Withdrawal",
-            "transactionAmount": 100,
-            "transactionDescription": "test",
-            "transactionDate": "12/02",
-            "userId": 1
-        },
-        {
-            "transactionId": 1,
-            "transactionType": "Withdrawal",
-            "transactionAmount": 100,
-            "transactionDescription": "test",
-            "transactionDate": "12/02",
-            "userId": 1
-        }
-        // { id: 1, transactionType: 'Withdraw', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' }
-    ]);
+
+    // setUsers()
 
     return (
         <div>
@@ -45,7 +68,7 @@ export default function DashboardFn() {
                 <thead>
                     <tr>
                         <th>Current Balance: </th>
-                        <th>{currentUser.user.balance}</th>
+                        <th>₹{initialBalance}</th>
                     </tr>
                     <tr>
                         <th>Account Number: </th>
@@ -66,12 +89,12 @@ export default function DashboardFn() {
                         </tr>
                     </thead>
                     <tbody>
-                        {users && users.map(user =>
-                            <tr key={user.transactionId}>
-                                <td>{user.transactionType}</td>
-                                <td>{user.transactionAmount}</td>
-                                <td>{user.transactionDate}</td>
-                                <td>{user.transactionDescription}</td>
+                        {transactions && transactions.map(trn =>
+                            <tr key={trn.transactionId}>   
+                                <td>{trn.transactionType}</td>
+                                <td>₹{trn.transactionAmount}</td>
+                                <td>{trn.transactionDate}</td>
+                                <td>{trn.transactionDescription}</td>
                             </tr>
                         )}
                     </tbody>

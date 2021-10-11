@@ -20,7 +20,7 @@
       "district": "Amritsar",
       "password": "1111",
       "confirmPassword": "1111",
-      "balance": "5000",
+      "balance": 5000,
       "id": 2
     },
     {
@@ -32,8 +32,23 @@
       "district": "Meerut",
       "password": "1234",
       "confirmPassword": "1234",
-      "balance": "100",
+      "balance": 100,
       "id": 3
+    },
+    {
+      "name": "akash",
+      "dob": "akash",
+      "id": 4
+    },
+    {
+      "username": "bigakash",
+      "dob": "1234",
+      "id": 5
+    },
+    {
+      "username": "bigakash",
+      "password": "1234",
+      "id": 6
     }
   ],
   "transactions": [
@@ -71,34 +86,34 @@
     },
     {
       "transactionType": "Deposit",
-      "transactionAmount": -200,
+      "transactionAmount": 200,
       "transactionDescription": "akash",
       "transactionDate": "11/10/2021",
       "userId": 3,
       "id": 5
     },
     {
-      "params": {
-        "transactionType": "Withdraw",
-        "transactionAmount": "100",
-        "transactionDate": "",
-        "userId": 3
-      },
-      "id": 6
-    },
-    {
       "transactionType": "Withdraw",
-      "transactionAmount": "100",
-      "transactionDate": "",
+      "transactionAmount": 100,
+      "transactionDate": "09/09/21",
+      "transactionDescription": "akash",
       "userId": 3,
       "id": 7
     },
     {
       "transactionType": "Withdraw",
-      "transactionAmount": "100",
-      "transactionDate": "",
+      "transactionAmount": 100,
+      "transactionDate": "15/02/20",
+      "transactionDescription": "akash",
       "userId": 3,
       "id": 8
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": "2000",
+      "transactionDate": "",
+      "userId": 2,
+      "id": 9
     }
   ]
 }

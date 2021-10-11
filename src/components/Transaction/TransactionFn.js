@@ -1,19 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import './transaction.css'
-import { useState } from "react";
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 export default function TransactionFn() {
-    
-    //{
-// "transactionType": "Deposit",
-// "transactionAmount": -200,
-// "transactionDescription": "akash",
-// "transactionDate": "11/10/2021",
-// "userId": 3
-// }
     
     const currentUser = useSelector(state => state.currentUser)
 
@@ -42,9 +33,6 @@ export default function TransactionFn() {
         });
 
 
-    const [count, setCount] = useState(0);
-
-
     return (
         <form onSubmit={handleSubmit(onSubmit)}  className='form-layout'>
             <h1 style={{color:'#15cdfc', textShadow:'2px 2px'}}>Withdraw/Deposit</h1>
@@ -59,7 +47,7 @@ export default function TransactionFn() {
 
                 <div className='form-label' style={{marginTop:'10px'}}>
                     <label style={{ margin:'15px' }}>Account Balance  </label>
-                    <label style={{ marginLeft:'100px' }} id="balance">{currentUser.user.balance}</label>
+                    <label style={{ marginLeft:'100px' }} id="balance">₹{currentUser.user.balance}</label>
                 </div>
 
                 <div className='form-label'>
@@ -73,7 +61,7 @@ export default function TransactionFn() {
                         }
                     }
                     )} />
-                    {errors.amount && <div className='form-error'>Minimum 100 & Maximum 10000 amount can be added.</div>}
+                    {errors.amount && <div className='form-error'>Minimum ₹100 & Maximum ₹10000 amount can be added.</div>}
                 </div>
 
                 <div className='form-label'>

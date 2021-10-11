@@ -34,15 +34,12 @@ export default function LoginFn() {
             }
             else
                 alert("Invalid User");
-            // if(Array(response.data).length>0)
-            // history.push("/dashboard");
         })
         .catch(function (error) {
             // handle error
             alert("Server Issue - "+error);
         });
 
-    //http://localhost:3000/users?username=json&password=1234
 
     return (
         <div className='form-input'>
