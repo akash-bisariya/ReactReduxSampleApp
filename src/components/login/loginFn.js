@@ -53,7 +53,7 @@ export default function LoginFn() {
                     {errors.username && <div className='form-error'>Please enter username.</div>}
                 </div>
                 <div className='form-label'>
-                    <input placeholder="Password" {...register("password", {
+                    <input type="password" placeholder="Password" {...register("password", {
                         required: true
                     }
                     )} />

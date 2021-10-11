@@ -36,19 +36,64 @@
       "id": 3
     },
     {
-      "name": "akash",
-      "dob": "akash",
+      "username": "test",
+      "dob": "2021-10-11",
+      "accountNumber": "123456788",
+      "accountType": "Saving Account",
+      "state": "Haryana",
+      "district": "Amritsar",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "balance": "0",
       "id": 4
     },
     {
-      "username": "bigakash",
-      "dob": "1234",
+      "username": "testing",
+      "dob": "2021-10-11",
+      "accountNumber": "123456788",
+      "accountType": "Saving Account",
+      "state": "Haryana",
+      "district": "Amritsar",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "balance": "0",
       "id": 5
     },
     {
-      "username": "bigakash",
+      "username": "newtest",
+      "dob": "2021-10-11",
+      "accountNumber": "12345",
+      "accountType": "Saving Account",
+      "state": "Haryana",
+      "district": "Amritsar",
       "password": "1234",
+      "confirmPassword": "1234",
+      "balance": "0",
       "id": 6
+    },
+    {
+      "username": "anuj",
+      "dob": "2021-10-11",
+      "accountNumber": "12345",
+      "accountType": "Saving Account",
+      "state": "Haryana",
+      "district": "Amritsar",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "balance": "0",
+      "id": 7
+    },
+    {
+      "username": "ankit",
+      "dob": "2021-10-14",
+      "accountNumber": "1111111111",
+      "accountType": "Current Account",
+      "state": "Haryana",
+      "district": "Jaipur",
+      "password": "1111",
+      "confirmPassword": "1111",
+      "balance": "0",
+      "id": 8
     }
   ],
   "transactions": [
@@ -57,7 +102,7 @@
       "transactionType": "Withdrawal",
       "transactionAmount": 100,
       "transactionDescription": "test",
-      "transactionDate": "12/02",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "userId": 1
     },
     {
@@ -65,14 +110,14 @@
       "transactionType": "Deposit",
       "transactionAmount": 200,
       "transactionDescription": "test",
-      "transactionDate": "12/02",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "userId": 2
     },
     {
       "transactionType": "Deposit",
       "transactionAmount": 200,
       "transactionDescription": "test",
-      "transactionDate": "12/02",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "userId": 3,
       "id": 3
     },
@@ -80,7 +125,7 @@
       "transactionType": "Deposit",
       "transactionAmount": 200,
       "transactionDescription": "akash",
-      "transactionDate": "11/10/2021",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "userId": 3,
       "id": 4
     },
@@ -88,14 +133,14 @@
       "transactionType": "Deposit",
       "transactionAmount": 200,
       "transactionDescription": "akash",
-      "transactionDate": "11/10/2021",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "userId": 3,
       "id": 5
     },
     {
       "transactionType": "Withdraw",
       "transactionAmount": 100,
-      "transactionDate": "09/09/21",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "transactionDescription": "akash",
       "userId": 3,
       "id": 7
@@ -103,17 +148,186 @@
     {
       "transactionType": "Withdraw",
       "transactionAmount": 100,
-      "transactionDate": "15/02/20",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
       "transactionDescription": "akash",
       "userId": 3,
       "id": 8
     },
     {
       "transactionType": "Withdraw",
-      "transactionAmount": "2000",
-      "transactionDate": "",
+      "transactionAmount": 2000,
+      "transactionDate": "10/11/2021, 11:50:42 AM",
+      "transactionDescription": "test",
       "userId": 2,
       "id": 9
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 300,
+      "transactionDescription": "For electricity bill",
+      "transactionDate": "10/11/2021, 11:50:42 AM",
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 500,
+      "transactionDescription": "deposit",
+      "transactionDate": "10/11/2021, 6:32:42 PM",
+      "userId": 3,
+      "id": 11
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 2000,
+      "transactionDescription": "savings",
+      "transactionDate": "10/11/2021, 6:42:02 PM",
+      "userId": 3,
+      "id": 12
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 100,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:02:34 PM",
+      "userId": 7,
+      "id": 13
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 2000,
+      "transactionDescription": "saving",
+      "transactionDate": "10/11/2021, 7:02:52 PM",
+      "userId": 7,
+      "id": 14
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 100,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:04:46 PM",
+      "userId": 7,
+      "id": 15
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 5000,
+      "transactionDescription": "saving",
+      "transactionDate": "10/11/2021, 7:05:36 PM",
+      "userId": 7,
+      "id": 16
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 8000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:14:03 PM",
+      "userId": 7,
+      "id": 17
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 10000,
+      "transactionDescription": "sss",
+      "transactionDate": "10/11/2021, 7:14:22 PM",
+      "userId": 7,
+      "id": 18
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 2000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:15:41 PM",
+      "userId": 7,
+      "id": 19
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 2000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:16:35 PM",
+      "userId": 7,
+      "id": 20
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 2000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:17:31 PM",
+      "userId": 7,
+      "id": 21
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 2000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:17:54 PM",
+      "userId": 7,
+      "id": 22
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 10000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:18:17 PM",
+      "userId": 7,
+      "id": 23
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 5000,
+      "transactionDescription": "aa",
+      "transactionDate": "10/11/2021, 7:19:45 PM",
+      "userId": 7,
+      "id": 24
+    },
+    {
+      "transactionType": "Withdraw",
+      "transactionAmount": 1000,
+      "transactionDescription": "aaabbb",
+      "transactionDate": "10/11/2021, 7:21:19 PM",
+      "userId": 7,
+      "id": 25
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 1000,
+      "transactionDescription": "need",
+      "transactionDate": "10/11/2021, 7:22:27 PM",
+      "userId": 3,
+      "id": 26
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 4000,
+      "transactionDescription": "bills",
+      "transactionDate": "10/11/2021, 7:23:02 PM",
+      "userId": 3,
+      "id": 27
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 10000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:24:05 PM",
+      "userId": 3,
+      "id": 28
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 100,
+      "transactionDescription": "save",
+      "transactionDate": "10/11/2021, 7:26:23 PM",
+      "userId": 8,
+      "id": 29
+    },
+    {
+      "transactionType": "Deposit",
+      "transactionAmount": 4000,
+      "transactionDescription": "test",
+      "transactionDate": "10/11/2021, 7:27:18 PM",
+      "userId": 2,
+      "id": 30
     }
   ]
 }

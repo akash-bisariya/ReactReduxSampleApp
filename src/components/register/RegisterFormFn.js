@@ -7,7 +7,15 @@ import axios from 'axios'
 export default function RegisterFormFN() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-    const onSubmit = data => axios.post("http://localhost:3000/users",data);
+    const onSubmit = data => axios.post("http://localhost:3000/users",data)
+    .then(function(response){
+        if(response.data)
+        alert("User has been registered!! Please login.")
+    })
+    .catch(function (error) {
+        // handle error
+        alert("Server Issue - "+error);
+    });;
 
     // console.log(data.dob);
 
@@ -36,7 +44,7 @@ export default function RegisterFormFN() {
             </div>
 
             <div className='form-label'>
-                <input placeholder="Account Number" {...register("accountNumber", {
+                <input type="number" placeholder="Account Number" {...register("accountNumber", {
                     required: true, minLength: {
                         value: 4,
                         message: 'min required'
@@ -104,16 +112,7 @@ export default function RegisterFormFN() {
                 {errors.confirmPassword && <div className='form-error'>Minimum 4 & Max 10 length allowed.</div>}
             </div>
             <div className='form-label'>
-                <input placeholder="Opening Balance" {...register("balance", {
-                    required: true, min: {
-                        value: 100,
-                        message: 'min required'
-                    }, max: {
-                        value: 10000,
-                        message: 'max required'
-                    }
-                }
-                )} />
+                <input type="hidden" value="0" {...register("balance" )} />
                 {errors.balance && <div className='form-error'>Minimum 100 & Maximum 10000 amount can be added.</div>}
             </div>
 

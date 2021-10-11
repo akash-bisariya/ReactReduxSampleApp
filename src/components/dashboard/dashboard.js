@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import allActions from '../actions/allActions';
 
 export default function DashboardFn() {
     const currentUser = useSelector(state => state.currentUser)
-
+    const dispatch = useDispatch()
     const [transactions, setTransaction] = useState([
         {
             "transactionId": 0,
@@ -19,8 +21,8 @@ export default function DashboardFn() {
     ]);
 
 
-    const [initialBalance, setUpdatedBalance] = useState(0);
-    
+    const [initialBalance, setUpdatedBalance] = useState(currentUser.user.balance);
+
 
 
     useEffect(() => {
@@ -29,10 +31,19 @@ export default function DashboardFn() {
                 if (response.data[0]) {
                     console.log(response.data)
                     setTransaction(response.data)
-                    var bal=0
-                    response.data.map(trn=>bal=bal+(trn.transactionType==="Withdraw"?-trn.transactionAmount:trn.transactionAmount))
-                    setUpdatedBalance(currentUser.user.balance+bal)
-                    console.log(currentUser.user.balance+"balnce --- "+bal)
+                    var bal = 0
+                    response.data.map(trn => bal = bal + (trn.transactionType === "Withdraw" ? -trn.transactionAmount : trn.transactionAmount))
+
+                    setUpdatedBalance(s => {
+                        currentUser.user.balance = bal;
+
+                        dispatch(allActions.userActions.setUser(currentUser.user));
+                        return bal;
+                    })
+
+                    //currentUser.user.balance = initialBalance;
+
+                    //dispatch(allActions.userActions.setUser(currentUser.user));
                 }
                 else
                     alert("Invalid User");
@@ -49,8 +60,6 @@ export default function DashboardFn() {
 
     const handleWithdraw = data => history.push("/transaction");
 
-
-    // setUsers()
 
     return (
         <div>
@@ -90,7 +99,7 @@ export default function DashboardFn() {
                     </thead>
                     <tbody>
                         {transactions && transactions.map(trn =>
-                            <tr key={trn.transactionId}>   
+                            <tr key={trn.transactionId}>
                                 <td>{trn.transactionType}</td>
                                 <td>₹{trn.transactionAmount}</td>
                                 <td>{trn.transactionDate}</td>
